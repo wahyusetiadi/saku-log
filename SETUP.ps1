@@ -408,7 +408,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 WriteFile "app\page.tsx" @'
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";;
 
 export default async function HomePage() {
   const session = await getServerSession(authOptions);
@@ -550,7 +550,7 @@ Write-Host "📄 Menulis halaman app (protected)..." -ForegroundColor Yellow
 
 WriteFile "app\(app)\layout.tsx" @'
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";;
 import { redirect } from "next/navigation";
 import { Sidebar } from "@/components/layout/Sidebar";
 
@@ -1316,7 +1316,7 @@ export async function POST(req: NextRequest) {
 WriteFile "app\api\expenses\route.ts" @'
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";;
 import { supabaseAdmin } from "@/lib/supabase";
 
 export async function GET(req: NextRequest) {
@@ -1360,7 +1360,7 @@ export async function POST(req: NextRequest) {
 WriteFile "app\api\expenses\[id]\route.ts" @'
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";;
 import { supabaseAdmin } from "@/lib/supabase";
 
 export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
@@ -1386,7 +1386,7 @@ export async function DELETE(req: NextRequest, { params }: { params: { id: strin
 WriteFile "app\api\expenses\stats\route.ts" @'
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";;
 import { supabaseAdmin } from "@/lib/supabase";
 import { getMonthRange } from "@/lib/utils";
 
@@ -1431,7 +1431,7 @@ export async function GET(req: NextRequest) {
 WriteFile "app\api\categories\route.ts" @'
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";;
 import { supabaseAdmin } from "@/lib/supabase";
 
 export async function GET() {
@@ -1466,7 +1466,7 @@ export async function DELETE(req: NextRequest) {
 WriteFile "app\api\planner\route.ts" @'
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";;
 import { supabaseAdmin } from "@/lib/supabase";
 import { getMonthRange } from "@/lib/utils";
 
