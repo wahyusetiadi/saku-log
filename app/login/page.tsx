@@ -45,7 +45,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-surface-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-linear-to-br from-primary-50 via-white to-surface-50 flex items-center justify-center p-4">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-100 rounded-full opacity-40 blur-3xl" />
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary-100 rounded-full opacity-40 blur-3xl" />
@@ -55,7 +55,7 @@ export default function LoginPage() {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-2xl shadow-lg mb-4">
             <Wallet className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-2xl font-bold text-surface-900">Saku-log</h1>
+          <h1 className="text-2xl font-bold text-surface-900">Saku Log</h1>
           <p className="text-surface-500 text-sm mt-1">Catat Pengeluaranmu dengan Mudah</p>
         </div>
         <div className="card p-6">

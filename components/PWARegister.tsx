@@ -25,7 +25,7 @@ export function PWARegister() {
             <div className="flex items-center gap-3">
               <span className="text-xl">📲</span>
               <div>
-                <p className="font-medium text-sm">Install Saku-log</p>
+                <p className="font-medium text-sm">Install Saku Log</p>
                 <p className="text-xs opacity-75">Tambahkan ke layar utama</p>
               </div>
               <button

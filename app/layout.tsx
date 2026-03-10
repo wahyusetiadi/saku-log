@@ -17,13 +17,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Saku-log | Catat Pengeluaranmu",
+  title: "Saku Log | Catat Pengeluaranmu",
   description: "Aplikasi pencatat pengeluaran pribadi yang cerdas",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Saku-log",
+    title: "Saku Log",
   },
   icons: {
     icon: "/icons/icon-192.png",
