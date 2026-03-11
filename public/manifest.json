@@ -1,6 +1,6 @@
 {
-  "name": "Saku-log",
-  "short_name": "Saku-log",
+  "name": "SakuLogs",
+  "short_name": "SakuLogs",
   "description": "Aplikasi pencatat pengeluaran pribadi",
   "start_url": "/dashboard",
   "display": "standalone",
