@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         style={{ backgroundColor: "var(--color-surface-50)" }}>
         <Providers>
           {children}
-          <PWARegister />
+          {/* <PWARegister /> */}
           <Toaster
             position="top-center"
             toastOptions={{

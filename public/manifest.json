@@ -1,6 +1,6 @@
 {
   "name": "SakuLogs",
-  "short_name": "SakuLogs",
+  "short_name": "created by Dante",
   "description": "Aplikasi pencatat pengeluaran pribadi",
   "start_url": "/dashboard",
   "display": "standalone",
