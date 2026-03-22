@@ -41,7 +41,7 @@ export function Sidebar() {
             </div>
             <div>
               <h1 className="text-base font-bold text-surface-900 leading-none">
-                sda
+                SakuLogs
               </h1>
               <p className="text-xs text-surface-400 mt-0.5">
                 Catat Pengeluaranmu

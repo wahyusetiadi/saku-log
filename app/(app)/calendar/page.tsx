@@ -51,7 +51,7 @@ export default function CalendarPage() {
             .react-calendar__tile{aspect-ratio:1;max-width:none;border-radius:10px;font-size:13px;padding:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
             .react-calendar__tile:hover{background:#f5f5f4}
             .react-calendar__tile--active{background:#16a34a !important;color:white}
-            .react-calendar__tile--now{background:#f0fdf4;color:#16a34a;font-weight:700}
+            .react-calendar__tile--now{background:#16a34a;color:#ffffff;font-weight:700}
           `}</style>
           <Calendar value={selectedDate}
             onChange={(val: Value) => { if (val instanceof Date) setSelectedDate(val); }}
@@ -82,7 +82,7 @@ export default function CalendarPage() {
             <div className="space-y-2 max-h-80 overflow-y-auto">
               {dayExpenses.map(expense => (
                 <div key={expense.id} className="flex items-center gap-3 p-3 rounded-xl bg-surface-50">
-                  <div className="w-9 h-9 rounded-lg flex items-center justify-center text-base flex-shrink-0"
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center text-base shrink-0"
                     style={{ backgroundColor: (expense.category?.color || "#a8a29e") + "25" }}>
                     {expense.category?.icon || "📦"}
                   </div>
@@ -90,7 +90,7 @@ export default function CalendarPage() {
                     <p className="text-sm font-medium text-surface-800 truncate">{expense.description}</p>
                     <p className="text-xs text-surface-400">{expense.category?.name || "Tanpa Kategori"}</p>
                   </div>
-                  <p className="text-sm font-semibold text-surface-800 flex-shrink-0">{formatCurrency(expense.amount, currency)}</p>
+                  <p className="text-sm font-semibold text-surface-800 shrink-0">{formatCurrency(expense.amount, currency)}</p>
                 </div>
               ))}
             </div>

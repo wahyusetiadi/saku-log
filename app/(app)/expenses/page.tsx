@@ -111,7 +111,7 @@ export default function ExpensesPage() {
               <div className="divide-y divide-surface-50">
                 {grouped[date].map(expense => (
                   <div key={expense.id} className="flex items-center gap-3 px-5 py-3.5 hover:bg-surface-50 transition-colors group">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg flex-shrink-0"
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0"
                       style={{ backgroundColor: (expense.category?.color || "#a8a29e") + "20" }}>
                       {expense.category?.icon || "📦"}
                     </div>
@@ -121,9 +121,9 @@ export default function ExpensesPage() {
                     </div>
                     <div className="flex items-center gap-2">
                       <p className="text-sm font-semibold text-surface-800">{formatCurrency(expense.amount, currency)}</p>
-                      <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <button onClick={() => setEditingExpense(expense)} className="p-1.5 rounded-lg text-surface-400 hover:text-primary-600 hover:bg-primary-50"><Pencil size={13} /></button>
-                        <button onClick={() => handleDelete(expense.id)} className="p-1.5 rounded-lg text-surface-400 hover:text-red-500 hover:bg-red-50"><Trash2 size={13} /></button>
+                      <div className="flex gap-1">
+                        <button onClick={() => setEditingExpense(expense)} className="p-1.5 rounded-lg text-primary-600 hover:bg-primary-50"><Pencil size={13} /></button>
+                        <button onClick={() => handleDelete(expense.id)} className="p-1.5 rounded-lg text-red-500 hover:bg-red-50"><Trash2 size={13} /></button>
                       </div>
                     </div>
                   </div>
