@@ -13,7 +13,6 @@ CREATE TABLE IF NOT EXISTS users (
   id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   username VARCHAR(50) UNIQUE NOT NULL,
-  whatsapp_number VARCHAR(20) UNIQUE,
   password_hash TEXT NOT NULL,
   avatar_url TEXT,
   currency VARCHAR(10) DEFAULT 'IDR',
