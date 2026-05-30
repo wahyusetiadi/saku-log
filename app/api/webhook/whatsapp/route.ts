@@ -2,6 +2,11 @@ import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
 import { sendWhatsAppMessage } from "@/lib/greenapi";
 
+export async function GET(req: Request) {
+  // GreenAPI kadang mengirim GET request hanya untuk mengecek apakah URL webhook aktif
+  return NextResponse.json({ status: "Webhook is alive and listening" });
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -15,7 +20,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ status: "ignored" });
     }
 
-    const chatId = body.senderData.chatId; // e.g. 628123456789@c.us
+    const chatId = body.senderData.chatId;
     const textMessage = body.messageData.textMessageData.textMessage;
     
     // Ekstrak nomor WA dari chatId
@@ -29,7 +34,6 @@ export async function POST(req: Request) {
       .single();
 
     if (userError || !user) {
-      // User tidak ditemukan, kirim balasan info
       await sendWhatsAppMessage(
         chatId,
         "Maaf, nomor Anda belum terdaftar di sistem Saku-Log. Silakan tambahkan nomor Anda di database."
@@ -37,9 +41,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ status: "unregistered_user" });
     }
 
-    // Parsing pesan sederhana (Regex format: - 50000 deskripsi)
-    // Bisa menangani "-50000 makan" atau "- 50000 makan siang"
-    const regex = /^\s*-\s*(\d+)\s+(.+)$/i;
+    // Parsing pesan yang sudah diperbarui agar kebal Auto-Format WA (bisa baca '-', '•', atau langsung angka)
+    // Contoh yang akan lolos: "- 50000 makan", "• 50000 makan", "-50000 makan", "50000 makan"
+    const regex = /^\s*[-•]?\s*(\d+)\s+(.+)$/i;
     const match = textMessage.match(regex);
 
     if (!match) {
